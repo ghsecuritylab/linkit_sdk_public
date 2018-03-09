@@ -59,6 +59,8 @@ int32_t dhcp_config_init(void);
 
 #define USE_DHCP                 1
 
+#ifdef ORIGINAL
+
 #define STA_IPADDR    ("192.168.1.101")
 #define STA_NETMASK   ("255.255.255.0")
 #define STA_GATEWAY   ("192.168.1.1")
@@ -71,5 +73,25 @@ int32_t dhcp_config_init(void);
 #define SECONDARY_DNS ("8.8.4.4")
 #define IP_POOL_START ("10.10.10.2")
 #define IP_POOL_END   ("10.10.10.10")
+
+#else
+
+#define STA_IPADDR    ("192.168.2.240")
+#define STA_NETMASK   ("255.255.255.0")
+#define STA_GATEWAY   ("192.168.2.1")
+
+#define AP_IPADDR     ("10.10.10.1")
+#define AP_NETMASK    ("255.255.255.0")
+#define AP_GATEWAY    ("10.10.10.1")
+
+#define PRIMARY_DNS   ("8.8.8.8")
+#define SECONDARY_DNS ("8.8.4.4")
+#define IP_POOL_START ("10.10.10.2")
+#define IP_POOL_END   ("10.10.10.10")
+
+
+#endif
+
+
 
 #endif  /*__WIFI_LWIP_DEFAULT_CONFIG_H__*/
